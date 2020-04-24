@@ -4,8 +4,8 @@ dotenv.config();
 const mongoConfig = {
     /*serverUrl: "mongodb://localhost:27017/",*/
    // serverUrl: "mongodb+srv://venu:gunners1234@cluster0-v0zjz.mongodb.net/test",
-   serverUrl: "mongodb+srv://"+ process.env.USER_NAME +":" + process.env.PASS_ONE + "@cluster0-v0zjz.mongodb.net/test",
-
+   //serverUrl: "mongodb+srv://"+ process.env.USER_NAME +":" + process.env.PASS_ONE + "@cluster0-v0zjz.mongodb.net/test",
+    serverUrl:""+process.env.DATABASE_URL, 
     database: "PlayBook_Hills",
 
 };
