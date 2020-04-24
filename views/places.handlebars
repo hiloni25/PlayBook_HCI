@@ -1,0 +1,57 @@
+<nav>
+    <div class="nav-wrapper ">
+        <a href="/home" class="brand-logo">Playbook</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/venues">Set up a game</a></li>
+            <li><a href="/join">Join a game</a></li>
+            <li><a href="/news">News</a></li>
+            <li><a href="/profile">My Account</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container">  
+
+    {{#each places}}
+    <div class=" hoverable maps" style="background-color: #fff"> 
+        <form class="col s12" id="some_form1" method="post" action="bookingInfo">
+            <img style="margin-left: 3vh; margin-top: 3vh; "   width="250" height="200" 
+                src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference={{{this.photos.0.photo_reference}}}&key=AIzaSyAgCmZMYCBmuNLO_gJOxCWzobV3DLvtevY"></img>
+            <iframe style="margin-left: 3vh;" width="200" height="200" frameborder="0" style="border:0;height:300px;width:300px"
+                src="https://www.google.com/maps/embed/v1/place?q=place_id:{{{this.place_id}}}&key=AIzaSyAgCmZMYCBmuNLO_gJOxCWzobV3DLvtevY"
+                allowfullscreen></iframe> 
+            <h5 style="margin-left: 3vh" name="Name" class="text">Name:{{{this.name}}}</h5>
+            <p style="margin-left: 3vh" name="Address" class="text">Address:{{{this.formatted_address}}}</p>
+            {{!<p style="margin-left: 3vh" class="text">Open Now:{{{this.opening_hours.open_now}}{{!}</p>-}} 
+            <p style="margin-left: 3vh" class="text">Rating:{{{this.rating}}}</p> 
+            <div style="margin-left: 2.0vh;" class="row">
+                <div class="input-field col s4">
+                    <select required name="time">
+                        <option disabled value="" selected>Choose time</option>
+                        {{#each timeJson.time}}
+                        <option>{{this}}</option>
+                        {{/each}}
+                    </select>
+                </div> 
+            
+            </div> 
+            {{!-- <a href="/venues">"Make another search"</a>   --}}
+
+            <button style="margin-left: 3vh;" class="btn waves-effect waves-light" type="submit" name="submit" value={{@index}}>Submit
+                <i class="material-icons right">send</i>
+            </button>
+            <br><br>
+
+        </form>
+    </div>
+    {{/each}}
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('select').formSelect();
+    });
+    $("select[required]").css({ display: "block", height: 0, padding: 0, width: 0, position: 'absolute' });  
+</script>

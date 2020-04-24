@@ -1,0 +1,78 @@
+<main>
+  <div class="container">
+    <div class="flow-text">My Events</div>
+    <br/>
+    <table class="event-listing bordered striped centered highlight responsive-table #e0f7fa cyan lighten-5">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Sport</th>
+          <th>Date & Time</th>
+          <th>Duration</th>
+          <th>Ground</th>
+          <th>Notes</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each userEvents}}
+        <tr data-id={{this._id}}>
+          <td></td>
+          <td>{{this.sport}}</td>
+          <td>{{this.dateTime}}</td>
+          <td>{{this.duration}}</td>
+          <td>{{this.ground}}</td>
+          <td>{{this.notes}}</td>
+          <td>{{#this.status}}
+            {{toUpperCase this}}
+            {{/this.status}}</td>
+        </tr>
+        {{/each}}
+
+      </tbody>
+    </table>
+
+    <div class="flow-text">Other Events</div>
+    <br/>
+    <table class="other-events event-listing bordered striped centered highlight responsive-table #e0f7fa teal lighten-5">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Sport</th>
+          <th>Created By</th>
+          <th>Date & Time</th>
+          <th>Duration</th>
+          <th>Ground</th>
+          <th>Notes</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each otherEvents}}
+        <tr data-id={{this._id}}>
+          <td></td>
+          <td>{{this.sport}}</td>
+          <td>{{this.createdBy}}</td>
+          <td>{{this.dateTime}}</td>
+          <td>{{this.duration}}</td>
+          <td>{{this.ground}}</td>
+          <td>{{this.notes}}</td>
+          <td>
+            {{#this.reqStatus}}
+            {{#if (includes "none")}}
+            <button name="join-event" class="join-event btn waves-effect waves-light" value={{@index}}>Join
+              Event</button>
+            {{else}}
+            {{toUpperCase this}}
+            {{/if}}
+            {{/this.reqStatus}}
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+  </div>
+</main>
+
+<a class="logout" href="/logout">Logout</a>

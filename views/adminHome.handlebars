@@ -1,0 +1,46 @@
+<div>
+  <div class="container-admin">
+  <div class="container-signUp">
+    <div class="flow-text">Events</div>
+    <table class="striped highlight centered events-table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Sport</th>
+          <th>Created By</th>
+          <th>Date & Time</th>
+          <th>Ground</th>
+          <th>Notes</th>
+          <th>Total Players</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each events}}
+        <tr data-id={{this._id}}>
+          <td>{{@index}}</td>
+          <td>{{this.sport}}</td>
+          <td>{{this.createdBy}}</td>
+          <td>{{this.dateTime}}</td>
+          <td>{{this.name}}</td>  
+          <td>{{this.notes}}</td>
+          <td>{{this.players}}</td>
+          <td>
+            {{#this.status}}
+            {{#if (includes "pending")}}
+            <button name="approve" class="approve-event" value={{@index}} >Approve</button>
+            <button name="reject" class="reject-event" value = {{@index}}>Reject</button>
+            {{else}}
+            {{toUpperCase this}}
+            {{/if}}
+            {{/this.status}}
+          </td>
+        </tr>
+        {{/each}}
+
+      </tbody>
+    </table>
+  </div>
+  <div class="row"><a class="logout col s12 btn btn-large waves-effect textonly" href="/adminLogout">Logout</a></div>
+  </div>
+</main>

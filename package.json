@@ -1,0 +1,28 @@
+{
+    "name": "cs-546-lab-9",
+    "version": "1.0.0",
+    "description": "The Playbook",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "seed": "node ./js/seed.js",
+        "dev": "nodemon app.js"
+    },
+    "author": "Kannu Verma 10453882, Vedadnya Jadhav 10450603",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.19.0",
+        "bcryptjs": "^2.4.3",
+        "cookie-parser": "^1.4.4",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-handlebars": "3.1.0",
+        "express-session": "^1.17.0",
+        "handlebars": "^4.7.6",
+        "mongodb": "^3.3.5",
+        "seed": "^0.4.4"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.3"
+    }
+}

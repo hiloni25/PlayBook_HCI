@@ -1,0 +1,134 @@
+<nav class="our-bar textonly">
+    <div class="nav-wrapper">
+        <a href="/home" class="brand-logo">Playbook</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/venues">Set up a game</a></li>
+            <li><a href="/join">Join a game</a></li>
+            <li><a href="/news">News</a></li>
+            <li><a href="/profile">My Account</a></li>
+            <li><a href="/logout">Logout</a></li> 
+        </ul>
+    </div>
+</nav>
+<div class="container" >
+    <div style="">
+    <ul class="collection with-header"  > 
+        <li class="collection-header text" style="background-color: #081f2c; color: #fff;"><h4>Profile Details</h4></li>
+        <li class="collection-item ">
+            <p class="text "><span>First Name         :</span><b>  {{userObj.firstName}}</b></p>
+             <p class="text"><span>Last Name          :</span><b>   {{userObj.lastName}}</b> </p>
+            <p class="text"><span>Email              :</span> <b>   {{userObj.email}}</b> </p>
+            <p class="text"><span>Phone              :</span><b>    {{userObj.phone}}</b> </p>
+            <p class="text"><span>Date of birth      :</span><b>    {{userObj.dob}}</b> </p>
+            <p class="text"><span>Gender             :</span><b>  {{userObj.gender}}</b> </p>
+            <p class="text"><span>Sport              :</span><b>    {{userObj.interestedSport}}</b> </p> 
+            <div style=" " class="center-align"><button data-target="modal1" class=" btn btn-medium waves-effect textonly modal-trigger">Edit Info</button></div>
+            <br /> 
+            <div class="center-align"><a href="/logout" class=" btn btn-medium waves-effect textonly">Logout</a></div>
+
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <form  method="POST" id="updateUserInfo" action="/profile">
+                        <div class="row abc">
+                             <div class="input-field col s12">
+                                <input id="email" type="email" value="{{userObj.email}}" class="validate" name="email">
+                                <label class="text" for="email">Email</label>  
+                                {{!<label style="color: #7881ff; font-variant: normal; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; for="email">Email</label>
+                                <label style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;" for="email">Email</label>-}}
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="phone" type="number" class="validate" value="{{userObj.phone}}" name="phoneNumber">
+                                <label class="text" for="phone">Phone</label> 
+                                {{!<label style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;" for="phone">Phone</label>-}}
+                            </div>
+                            <div class="input-field col s12" >
+                                <input id="dob" type="text" class="datepicker" value="{{userObj.dob}}" name="dob">
+                                <label class="text" for="dob">Date of birth</label>
+
+                                {{!<label style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;" for="dob">Date of birth</label>-}}
+                            </div> 
+                            <div class='row'>
+                                <p class="text-black">
+                                    <label class="text" >Gender:
+                                    {{!<label style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;"> Gender:-}}
+                                    
+                                    <input class="with-gap" name="gender" type="radio" value="Male"  />
+                                    <span style="margin-right: 1.25em">Male</span>
+                                    </label>
+                                    <label class="text" >
+                                    {{!<label style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;">-}}
+                                    <input class="with-gap" name="gender" type="radio" value="Female"  />
+                                    <span style="margin-right: 1.25em">Female</span> 
+                                    </label>
+                                </p>
+                             </div>
+                             <div class='row'>
+                                <p class="text-black">
+                                    <label class="text;" >Sport:
+                                    {{!<label style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;"> sport:-}}
+                                        <input class="with-gap" name="sport" type="radio" value="Football"/>     
+                                        <span style="margin-right: 1.25em">Football</span>   
+                                    </label>
+                                    <label class="text;" >
+                                    {{!<label style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;">-}}
+                                        <input class="with-gap" name="sport" type="radio" value="Soccer"  style="margin-right: 0" />    
+                                        <span style="margin-right: 1.25em">Soccer</span>
+                                    </label>
+                                    <label class="text;" >
+                                    {{!<label style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;">-}}
+                                        <input class="with-gap" name="sport" type="radio" value="Baseball"  />
+                                        <span style="margin-right: 1.25em">Baseball</span>
+                                    </label>
+                                    <label class="text;"> 
+                                    {{!<label style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;">-}}
+                                        <input class="with-gap" name="sport" type="radio" value="Basketball"  />
+                                        <span style="margin-right: 1.25em">Basketball</span>
+                                    </label>
+                                </p>
+                             </div>
+                            <div class='row center-align'>
+                                <button type='submit' name='btn_login' class='col s4 btn btn-large waves-effect textonly center-align' style="align-self: center">Update Profile</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat text">Close</a>
+                </div> 
+            </div>
+        </li>
+    </ul>
+    </div>
+
+    {{!<div class="divider"></div>-}}
+
+</div>
+
+<script>
+
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+
+   $(document).ready(function(){
+    $('.datepicker').datepicker({ 
+        maxDate: new Date(),
+        //selectMonths: true, // Creates a dropdown to control month
+        //selectYears: 15, // Creates a dropdown of 15 years to control year, 
+        //today: 'Today',
+        //clear: 'Clear',
+        //close: 'Ok',
+        //closeOnSelect: true // Close upon selecting a date   
+    });
+  });
+
+    $(document).ready(function() {
+    $('input#input_file, textarea#textarea2').characterCounter();
+  });
+     
+      $(document).ready(function(){
+    $('select').formSelect();
+  });
+
+     
+</script>

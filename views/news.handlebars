@@ -1,0 +1,110 @@
+<main>
+{{#if userNotLogged}}
+<nav class="our-bar textonly">
+    <div class="text container nav-wrapper">
+        <a href="/" class="text brand-logo">Playbook</a>
+        <ul id="nav-mobile" class="text right hide-on-med-and-down">
+            {{!-- <li><a href="/venues">Set up a game</a></li> 
+            <li><a href="/join">Join a game</a></li>--}}
+            <li><a href="/news">News</a></li>
+            <li><a href="/signup">Signup</a></li>
+            <li><a href="/login">Login</a></li>
+        </ul>
+    </div>
+</nav>
+{{/if}}
+
+
+{{#if userLogged}}
+<nav class="our-bar textonly">
+    <div class="text nav-wrapper">
+        <a href="/" class="text brand-logo">Playbook</a>
+        <ul id="nav-mobile" class="text right hide-on-med-and-down">
+            <li><a href="/venues">Set up a game</a></li>
+            <li><a href="/join">Join a game</a></li>
+            <li><a href="/news">News</a></li>
+            {{!-- <li><a href="/signup">Signup</a></li> --}}
+            <li><a href="/profile">My Account</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+{{/if}}
+
+<div class="text container newsback">
+
+    <div class = "container nav-wrapper" style="width: 100%; padding-left:20px;">      
+       <p style="font-size: 2.0rem;">Sports News</p> 
+    </div> 
+
+    <div class="text col s12">
+        {{!<div class="text card #dfe4ea large horizontal hoverable">-}}
+        <div class="text card #eeeeee grey lighten-3 medium horizontal hoverable">  
+            <div class="text card-image waves-effect waves-block waves-light">
+                <img class="text activator responsive-img" alt="image" src="{{firstNews.urlToImage}}">
+            </div>
+            
+            {{!-- <div class="text test-card">
+                <div class = "card-stacked">
+            <div class="text card-content" style="display: flex;align-items:center;"> 
+                <p style="font-size:2.0rem;" class="text card-title center activator">{{firstNews.title}}</p>
+                {{!<div class="text "> 
+                    <a class="text right" href="{{firstNews.url}}{{!">Read more</a>
+                </div>-}} 
+                </div>    
+                <div class="card-action">
+                    <a class="source-text  #64ffda teal-text text-accent-2" href="{{firstNews.url}}"
+                        target=".blank">{{firstNews.source.name}}</a> 
+                </div>
+                </div> 
+            </div>
+             --}}
+
+            <div class="card-stacked">
+                <div style="display: flex;align-items:center;" class="card-content">
+                    <span style="font-size:1.5rem;font-weight:bold;"
+                        class=" activator   text">{{firstNews.title}}</span>
+                </div>
+                <div class="card-action">
+                    <a class="source-text " style="color:#8D8C86" href="{{firstNews.url}}" 
+                        target=".blank">{{firstNews.source.name}}</a>  
+                </div>
+            </div> 
+
+            <div class="text card-reveal">
+                <span class="text card-title">{{{firstNews.title}}}<i class="text material-icons right">close</i></span>
+                <p style="font-size:1.5rem;" class="text">{{{firstNews.description}}}</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="text row">
+        {{#each articles}}
+        <div class="text col s12 m4 " >  
+            <div class="text card large nav-wrapper hoverable" > 
+                <div class="text card-image waves-effect waves-block waves-light " >
+                    <img class="text activator responsive-img" alt="image" src="{{{this.urlToImage}}}">
+                </div>  
+
+                
+                <div class="textw card-content">  
+                    <span style="font-size:1.2rem;" class="textw card-title activator" >{{this.title}}</span>
+                    <div class="text card-action "> 
+                        <a class="text center" style="color:#8D8C86" href="{{this.url}}" target=".blank">{{this.source.name}}</a> 
+                    </div>
+                </div>
+                <div class="text card-reveal #eeeeee grey lighten-3">
+                {{!<div class="text card-reveal #263238 blue-grey darken-4">-}} 
+                    <span class="text card-title">{{{this.title}}}<i class="text material-icons right">close</i></span>
+                    <p style="font-size:1.5rem;" class="text">{{{this.description}}}</p>
+                </div>
+
+                
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+</main>

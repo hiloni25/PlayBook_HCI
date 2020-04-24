@@ -1,0 +1,93 @@
+<nav class="our-bar textonly">
+  <div class="nav-wrapper">
+    <a href="/home" class="brand-logo">Playbook</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/venues">Set up a game</a></li>
+      <li><a href="/join">Join a game</a></li>
+      <li><a href="/news">News</a></li>
+      <li><a href="/profile">My Account</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container-signUp">
+
+  <center>
+    <div class="z-depth-1 grey lighten-4 row"
+      style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+      <div class="row">
+        <h1 class="text">Book an Event Here</h1>
+      </div>
+      <form class="someform col s12" id="some_form" method="post" action="maps">
+        <div class="row" >
+          <div class="col s12">  
+            <label class="text";
+            {{!<label style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;"-}}
+              for="sports">Sport:</label>
+            <select class="text"; required
+            {{!<select style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;" required -}}
+              name="sports">
+              <option disabled selected>Select a Sport</option>
+              <option>Football</option>
+              <option>BasketBall</option>
+              <option>Soccer</option>
+              <option>Baseball</option>
+            </select>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <label class="text";
+            {{!<label style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;"-}}
+              for="location">Location:</label>
+            {{!<select class="text"; required -}} 
+            <select style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;" required 
+              name="location" >
+              <option disabled selected>Select a Location</option>
+              <option class="text">Jersey</option>
+              <option class="text">Newyork</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <label class="text";
+            {{!<label style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;"-}}
+              for="date">Select the date for scheduling the event:</label>
+            <input required id="date" type="text" class="datepicker" name="date" >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <label class="text";
+            {{!<label style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;"-}}
+              for="noofplayers">Enter required players to join the game:</label>
+            <input required id="noofplayers" type="number" class="numberOfPlayers" name="noofplayers">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <label class="text";
+            {{!<label style="color : #bf360c; font-variant: small-caps; font-family: 'Lilita One', cursive;"-}}
+              for="description">Enter event description:</label>
+            <input required id="description" type="text" name="description">
+          </div>
+        </div>
+        <script>
+          $(document).ready(function () {
+            $('select').formSelect();
+          });
+          $("select[required]").css({ display: "block", height: 0, padding: 0, width: 0, position: 'absolute' });
+          $(document).ready(function () {
+            $('.datepicker').datepicker();
+          });
+
+        </script>
+        <div class="row">
+          <button class="col s12 btn btn-large waves-effect textonly" type="submit" name="action">Submit</button>
+        </div>
+      </form>
+    </div>
+  </center>
+</div>>

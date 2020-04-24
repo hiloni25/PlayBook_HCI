@@ -1,0 +1,181 @@
+<nav class="our-bar textonly">
+    <div class="nav-wrapper">
+        <a href="/home" class="brand-logo">Playbook</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/venues">Set up a game</a></li>
+            <li><a href="/join">Join a game</a></li>
+            <li><a href="/news">News</a></li>
+            <li><a href="/profile">My Account</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+ 
+<div class="container"> 
+
+    <p class="nav-wrapper" style="font-size:2.0rem">My Events</p> 
+    {{!-- b2 = {{bool2}} --}}
+    {{#if bool2}} 
+         
+        <p>No events created by you. Create a event in Set Up a game</p>  
+
+    {{/if}} 
+
+    <div class="row">
+        {{#each y}}
+        <div class="col s12 m4">
+            <div class="card small hoverable nav-wrapper">
+
+
+                <div class="card-content">
+                    <span style="" class="card-title activator  #eceff1 blue-grey-text text-lighten-5">Category:
+                        {{this.sport}}</span>
+                    <p style="" class="#eceff1 blue-grey-text text-lighten-5">Location: {{{this.location}}}</p>
+                    <p style="" class="#eceff1 blue-grey-text text-lighten-5">Date: {{{this.date}}}</p>
+                </div>
+
+                <div class="card-reveal #fff text">   
+
+                    <p style="font-size:1.5rem;">Player Lists : </p> 
+                    {{#each this.playersList}}  
+
+                    <form method="POST" action="/join">
+                
+                    <p>Email id: {{this.email}}</p>
+                    
+                    <input id='eventId' type="hidden" name="eventId" value="{{this.cid}}" />
+
+                    <button class="btn waves-effect waves-light" type="submit" name="submit" value={{this.email}}>Remove
+                        <i class="material-icons right">send</i>
+                    </button>
+                    </form>
+                    {{/each}}  
+                    
+                </div>       
+
+    </div>           
+    </div>
+    {{/each}}
+    </div>
+    
+     
+
+    {{!-- <ul class="collection with-header">
+        <li class="collection-header">
+            <h1>My Events</h1>
+        </li>
+
+        {{#each y}}
+        <li class="collection-item">
+            <p><span>Category:</span> {{this.sport}}</p>
+            <p>Date: {{this.date}}</p>
+            <p>Location: {{this.location}} </p>
+            
+            <p style="font-size:1.5rem;">Player Lists : </h2>
+            {{#each this.playersList}}
+            <form method="POST" action="/join">
+                
+                    <p>Email id: {{this.email}}</p>
+                    
+                    <input id='eventId' type="hidden" name="eventId" value="{{this.cid}}" />
+
+                    <button class="btn waves-effect waves-light" type="submit" name="submit" value={{this.email}}>Remove
+                        <i class="material-icons right">send</i>
+                    </button>
+
+                    {{/each}}
+            </form>
+
+        </li>
+        {{/each}}
+
+    </ul> --}}
+
+
+    <p class="nav-wrapper" style="font-size:2.0rem">Events Joined</p> 
+
+    {{#if bool3}} 
+         
+        <p>You have not joined any events yet. To join an event, see the available events in Join a event</p>   
+
+    {{/if}}  
+
+
+    <div class="row">
+        {{#each z}}
+        <div class="col s12 m4">
+            <div class="card small hoverable nav-wrapper"> 
+                
+
+                <div class="card-content">
+                    <span style="" class="card-title activator  #eceff1 blue-grey-text text-lighten-5">Category:
+                        {{this.sport}}</span>
+                    <span style="" class="#eceff1 blue-grey-text text-lighten-5">Created By: {{{this.creatorEmail}}}</span>
+                    <p style="" class="#eceff1 blue-grey-text text-lighten-5">Date: {{this.date}}</p>
+                    <p style="" class="#eceff1 blue-grey-text text-lighten-5">Location: {{this.location}} </p>
+                </div>
+
+                <div class="card-reveal #fff text"> 
+                    <span class="card-title ">Created By: {{{this.creator}}}<i
+                            class="material-icons right">close</i></span>
+                    <p style="" >Date: {{{this.date}}}</p> 
+                    <p style="" >Location: {{{this.location}}}</p>
+                </div> 
+
+            </div>
+        </div>
+        {{/each}} 
+
+    </div> 
+
+    <p class="nav-wrapper" style="font-size:2.0rem">Other Events</p>
+    {{#if bool1}} 
+         
+        <p>No new events available for you to join</p>   
+
+    {{/if}} 
+    <div class="row">
+        {{#each x}}
+        <div class="col s12 m4">
+            <div class="card small hoverable nav-wrapper">  
+                
+
+                <div class="card-content">
+                    <span style="" class="card-title activator  #eceff1 blue-grey-text text-lighten-5">Category:
+                        {{this.sport}}</span>
+                    <p style="" class="#eceff1 blue-grey-text text-lighten-5">Created By: {{{this.creator}}}</p>
+                    <p style="" >Date: {{{this.date}}}</p>
+                    <p style="" >Location: {{{this.location}}}</p> 
+                    <div class="card-action">
+                        {{!-- <button href="">Join This game</a> --}}
+                        <form method="POST" action="myGames">
+                            <button class="btn waves-effect waves-light text" style="background-color: #fff" type="submit" name="submit"
+                                value={{this._id}}>Join Event
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </form>
+                    </div>
+
+
+
+                </div>
+
+                <div class="card-reveal #fff text"> 
+                    <span class="card-title ">Created By: {{{this.creator}}}<i
+                            class="material-icons right">close</i></span>
+                    <p style="" >Date: {{{this.date}}}</p>
+                    <p style="" >Time: {{{this.time}}}</p>
+                    <p style="" >Location: {{{this.location}}}</p>
+                    <p style="" >Ground Name: {{{this.groundName}}}</p>
+                    <p style="" >Address: {{{this.address}}}</p> 
+                </div>
+
+
+
+
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    </div> 
+   

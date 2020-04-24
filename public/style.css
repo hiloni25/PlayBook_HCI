@@ -1,0 +1,242 @@
+/*@import url('https://fonts.googleapis.com/css?family=Lilita+One&display=swap');*/
+
+logo img {
+    width: 60px;
+    height: 50px;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.container-signUp {
+    text-align: center !important;
+    width: 100%;
+    height : 100%;
+    opacity : 95%;
+
+}
+.container-signUp label{
+    color: #081f2c; 
+}
+
+body{
+    /*width: 100%;
+    height : 100%; */
+    /*background-color: #ffde5e;  */
+    background-color: #e3e5e6; 
+    /*background-color: #FFAF91; */ 
+    /*background: url('/public/basketball-wallpaper-ultra-hd-4k-156530.jpg');*/
+
+}
+
+.approve-event {
+    background-color: lightgreen; 
+    font-weight: bold;
+    height: 25px;
+    border-color: black;
+}
+
+.reject-event {
+    background-color: lightcoral;
+    font-weight: bold;
+    height: 25px;
+    border-color: black;
+}
+
+.events-table {
+    margin-left: 12px;
+    margin-right: 12px;
+    align-content: right;
+}
+
+.test-card {
+    width: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+.card-action-text {
+    /*color: red;*/
+    color: #7881ff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-wrapper{
+    /*background-color: #bf360c;*/
+    /*background-color: #7881ff; */
+    background-color: #081f2c; /*Also text color*/
+    color: #fff;
+    /*color: #fafafa;*/  
+}
+
+.news-background{
+    /*background-color: #fafafa; */
+    background-color: #e3e5e6; 
+    /*background-color: #FFAF91; */ 
+    /*background: url('/public/basketball-wallpaper-ultra-hd-4k-156530.jpg');*/
+}
+
+.all-background{
+    /*background-color: #fafafa;*/
+    /*background-color: #e3e5e6*/
+    /*background-color: #fff; */ 
+    background-color: #e3e5e6;  
+    /*background-color: #FFAF91; */ 
+
+    /*background-color: #ffde5e; */
+    /*background: url('/public/basketball-wallpaper-ultra-hd-4k-156530.jpg');*/
+}
+
+.container-auth{
+    height: 100%;
+    width: 100%;
+}
+
+.btn{
+    /*background-color: #bf360c;*/
+    background-color: #081f2c;
+    color: #fff;  
+    /*color: #fafafa;*/ 
+}
+
+.text {
+    /*color: #bf360c;*/
+    /*color: #7881ff;*/
+    color: #081f2c;  
+    /*font-variant: small-caps;*/
+    font-variant: normal;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /*font-family: 'Lilita One', cursive;*/
+}
+
+.textw {
+    /*color: #bf360c;*/
+    /*color: #7881ff;*/
+    color: #fff;  
+    /*font-variant: small-caps;*/
+    font-variant: normal;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /*font-family: 'Lilita One', cursive;*/
+}
+
+.abc label{
+    
+    /*color: #7881ff;*/
+    color: #081f2c;  
+
+    /*font-variant: small-caps;*/
+    font-variant: normal;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /*font-family: 'Lilita One', cursive;*/ 
+}
+
+.text-black {
+    color: #000000;
+    /*font-variant: small-caps;*/
+    font-variant: normal;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /*font-family: 'Lilita One', cursive;*/
+}
+
+.textonly {
+    color : #fafafa;
+    /*font-variant: small-caps;*/
+    font-variant: normal;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    /*font-family: 'Lilita One', cursive;*/
+}
+
+
+select{
+    /*color: #bf360c;*/
+    color: #7881ff; 
+    font-variant: normal;
+    /*font-variant: small-caps;*/
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /*font-family: 'Lilita One', cursive;*/
+}
+
+label{
+    /*color: #bf360c;*/
+    color: #7881ff;  
+
+}
+
+.sectionOverwrite {
+    /*background-color: #fafafa;*/ 
+    /*background-color: #ffde5e; */
+    /*background-color: #e3e5e6;*/ 
+    background-color: #081f2c; 
+    height: 45vh; 
+}
+
+.our-bar{
+    /*background-color: #bf360c;*/
+   
+    background-color: #081f2c; 
+}
+
+/*.modal{
+    height: 50%;
+    width: 75%;
+}*/ 
+
+/*.newsback{*/
+    /*background-color: #bf360c;*/
+    /*background-color: #7881ff;*/
+    
+/*}*/
+
+.maps{
+    /*border-color: aqua;*/
+    /*border: 3px solid #000000; */
+    border: 3px; 
+    margin: 30px;
+
+}
+
+.homecont{ 
+    height: 45vh;     
+} 
+
+.sizing{
+    height: 50vh;
+}
+
+h1{
+    font-size: 30pt;
+}
+
+h2{
+    font-size: 20pt;
+}
+
+/*.with-gap1{
+    display: flex;
+    flex: 4; 
+}*/
+
+/*input[type="radio"] {
+    margin-right: 0;
+} */
+
+/*.dp-calendar-day {
+    width: 200%;
+    height : 100%; 
+    /*width: 35px !important;
+    height: 30px !important;
+    font-size: 16px !important;}*/
+
+/*.datepicker{
+    width: 200%;
+    height : 100%; 
+}*/ 
+
+

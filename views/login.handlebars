@@ -1,0 +1,54 @@
+<main >
+
+<nav class="our-bar textonly">
+    <div class="text container nav-wrapper">
+        <a href="/" class="text brand-logo">Playbook</a>
+        <ul id="nav-mobile" class="text right hide-on-med-and-down">
+            {{!-- <li><a href="/venues">Set up a game</a></li> 
+            <li><a href="/join">Join a game</a></li>--}}
+            <li><a href="/news">News</a></li>
+            <li><a href="/signup">Signup</a></li>
+            <li><a href="/login">Login</a></li>
+        </ul>
+    </div>
+</nav> 
+
+
+    <p class="error">{{error}}</p>
+    <div class="container valign-wrapper">
+    <div class="container-signUp  ">
+        <div class=" z-depth-1 grey lighten-4 row"
+            style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+            <div class="row">
+                <form method="POST" id="login_form" action="/login">
+                    <div class="row">
+                        <h1 class=" logo text">Login to Play!</h1>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate text" name="email" required>
+                            <label for="email" class="text">Email</label style="color : #bf360c;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate text" name="password" required>
+                            <label  for="password" class="text">Password</label style="color : #bf360c;">
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <button type='submit' name='btn_login'
+                            class='col s12 btn btn-large waves-effect textonly'>Login</button>
+                    </div>
+                </form>
+                <div class="row">
+                    <a href="signup" class="text">Create account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
+
+
+

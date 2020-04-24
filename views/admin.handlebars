@@ -1,0 +1,32 @@
+<p class="error">{{error}}</p>
+<main>
+       <div class="container valign-wrapper">
+        <div class="container-signUp ">
+        <div class="z-depth-1 grey lighten-4 row"
+            style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+            <div class="row">
+                 <div class="row">
+                     <h1 class="text">Admin Login</h1>
+                </div>
+                <form class="col s12" method="POST" id="login_form" action="/admin">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="username" type="email" class="validate text" name="username" required>
+                            <label style="color : #bf360c;" for="username" class="text">Admin</label style="color : #bf360c;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password" class="validate text" name="password" required>
+                            <label style="color : #bf360c;" for="password" class="text">Password</label style="color : #bf360c;">
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <button type='submit' name='btn_login'
+                            class='col s12 btn btn-large waves-effect textonly'>Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+</main>
