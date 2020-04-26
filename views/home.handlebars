@@ -3,9 +3,9 @@
   <div class="nav-wrapper">
     {{!<a href="/" class="brand-logo">    Playbook</a>-}}
     
-    <a href="/" ><img src="/public/logo-finall.png" width="100;" height="90;"></a> 
+    <a href="/" ><img class="responsive-img" src="/public/logo-finall.png" style="height:64px;"></a> 
     <a href="/" class="brand-logo" >   Playbook</a>  
-     
+      
     <ul id="nav-mobile" class="right hide-on-med-and-down"> 
       {{!-- <li><a href="/venues">Set up a game</a></li> --}}
       {{!<li><a href="/join">Join a game</a></li> --}}
@@ -21,6 +21,7 @@
 {{#if userLogged}}
 <nav class="our-bar textonly">
   <div class="nav-wrapper">
+    <a href="/" ><img class="responsive-img" src="/public/logo-finall.png" style="height:64px;"></a> 
     <a href="/" class="brand-logo">    Playbook</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="/venues">Set up a game</a></li>
@@ -74,32 +75,57 @@
 <div class="contianer">  
   <div class="sectionOverwrite">        
     <div class="sizing row"> 
-    {{!--<div class="row"></div> --}}   
-      <div class="col s12 m4 ">
-        <div class="icon-block"> 
-          {{!<h1 class="center"><i class="large material-icons">event</i></h1>-}} 
-          <h1 class="center"><i class="large white-text material-icons">group_add</i></h1>
-          <h2 class="center textw">Join Sports Events</h1>
-            <p class="center textw">Join the sports events you like.</p>
-        </div>
-      </div>
-      <a href="/news">
-        <div class="col s12 m4">
-          <div class="icon-block"> 
-            <h1 class="center"><i class="large white-text material-icons">trending_up</i></h1>
-            <h2 class="center textw">Latest News</h1>
-              <p class="center textw">Get all the latest news articles from the sports you like.</p>
-          </div>
-        </div>
-      </a>
+    {{!--<div class="row"></div> --}}  
+    {{#if userNotLogged}}
       <div class="col s12 m4 "> 
         <div class="icon-block">
           {{!<h1 class="center"><i class="large material-icons">directions</i></h1>-}}
           <h1 class="center"><i class="large white-text material-icons">sports_soccer</i></h1>
-          <h2 class="center textw">Create Sports Event</h1>
+          <h2 class="center textw">Set Up A Game</h1>
             <p class="center textw">Create a Sports event and Book a ground</p>
         </div>
+      </div>  
+      <div class="col s12 m4 ">
+        <div class="icon-block"> 
+          {{!<h1 class="center"><i class="large material-icons">event</i></h1>-}} 
+          <h1 class="center"><i class="large white-text material-icons">group_add</i></h1>
+          <h2 class="center textw">Join A Game</h1>
+            <p class="center textw">Join the sports events you like.</p>
+        </div>
       </div>
+    {{/if}}
+    {{#if userLogged}} 
+      <a href="/venues"> 
+      <div class="col s12 m4 "> 
+        <div class="icon-block">
+          {{!<h1 class="center"><i class="large material-icons">directions</i></h1>-}}
+          <h1 class="center"><i class="large white-text material-icons">sports_soccer</i></h1>
+          <h2 class="center textw">Set Up A Game</h1>
+            <p class="center textw">Create a Sports event and Book a ground</p>
+        </div>
+      </div> 
+      </a> 
+      <a href="/join"> 
+      <div class="col s12 m4 ">
+        <div class="icon-block"> 
+          {{!<h1 class="center"><i class="large material-icons">event</i></h1>-}} 
+          <h1 class="center"><i class="large white-text material-icons">group_add</i></h1>
+          <h2 class="center textw">Join A Game</h1>
+            <p class="center textw">Join the sports events you like.</p>
+        </div>
+      </div>
+      </a>
+    {{/if}}
+      <a href="/news">
+        <div class="col s12 m4">
+          <div class="icon-block"> 
+            <h1 class="center"><i class="large white-text material-icons">trending_up</i></h1>
+            <h2 class="center textw">News</h1>
+              <p class="center textw">Get all the latest news articles from the sports you like.</p>
+          </div>
+        </div>
+      </a>
+      
     </div>
   </div>
 </div>

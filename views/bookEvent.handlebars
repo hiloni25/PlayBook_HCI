@@ -1,5 +1,6 @@
 <nav class="our-bar textonly">
   <div class="nav-wrapper">
+    <a href="/" ><img class="responsive-img" src="/public/logo-finall.png" style="height:64px;"></a> 
     <a href="/home" class="brand-logo">Playbook</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="/venues">Set up a game</a></li>
@@ -79,9 +80,21 @@
             $('select').formSelect();
           });
           $("select[required]").css({ display: "block", height: 0, padding: 0, width: 0, position: 'absolute' });
-          $(document).ready(function () {
-            $('.datepicker').datepicker();
+          
+
+          $(document).ready(function(){
+          $('.datepicker').datepicker({ 
+            minDate: new Date(),
+            //maxDate: new Date(),   
+            yearRange:40, 
+            //selectMonths: true, // Creates a dropdown to control month
+            //selectYears: 15, // Creates a dropdown of 15 years to control year, 
+            //today: 'Today',
+            //clear: 'Clear',
+            //close: 'Ok',
+            //closeOnSelect: true // Close upon selecting a date   
           });
+  });
 
         </script>
         <div class="row">

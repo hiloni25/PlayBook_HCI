@@ -4,7 +4,7 @@ const mapsData = collections.maps;
 var ObjectId = require('mongodb').ObjectId;
 
 module.exports = { 
-    async eventUpdateStatus(eventId, status) {
+    async eventUpdateStatus(eventId, status) {  
         
         const updatedEvent = {
             status: status
@@ -117,6 +117,21 @@ module.exports = {
                 userInfo.date = data.date;
                 userInfo.location = data.location;
                 userInfo.playersList = data.playersList;
+
+                let mapsCollection = await mapsData()
+            //    console.log(mapsCollection) 
+                let mapInfo = await mapsCollection.findOne({ eventsId: event._id });
+            //    console.log("Hey")
+            //    console.log(mapInfo)
+
+                if(mapInfo != null){
+                userInfo.time = mapInfo.time;
+                userInfo.location = event.location;
+                userInfo.groundName = mapInfo.name;
+                userInfo.address = mapInfo.address; 
+                }  
+
+                
                 result.push(userInfo);
             }
 
@@ -150,8 +165,22 @@ module.exports = {
                 userInfo.creatorEmail = data.creatorEmail;
                 userInfo.sport = data.sports;
                 userInfo.date = data.date;
-                userInfo.location = data.location;
-                userInfo.playersList = data.playersList;
+
+                let mapsCollection = await mapsData()
+            //    console.log(mapsCollection) 
+                let mapInfo = await mapsCollection.findOne({ eventsId: event._id });
+            //    console.log("Hey")
+            //    console.log(mapInfo)
+
+                if(mapInfo != null){
+                userInfo.time = mapInfo.time;
+                userInfo.location = event.location;
+                userInfo.groundName = mapInfo.name;
+                userInfo.address = mapInfo.address; 
+                } 
+
+                //userInfo.location = data.location;
+                //userInfo.playersList = data.playersList;
                 result.push(userInfo);
             }
 
@@ -196,11 +225,13 @@ module.exports = {
                 eventInfo.sport = event.sports;
                 eventInfo.creator = event.creatorEmail;
                 eventInfo.date = event.date;
+                //console.log("event")
+                //console.log(event) 
                 let mapsCollection = await mapsData()
-                console.log(mapsCollection) 
+            //    console.log(mapsCollection) 
                 let mapInfo = await mapsCollection.findOne({ eventsId: event._id });
-                console.log("Hey")
-                console.log(mapInfo)
+            //    console.log("Hey")
+            //    console.log(mapInfo)
 
                 if(mapInfo != null){
                 eventInfo.time = mapInfo.time;
@@ -238,6 +269,59 @@ module.exports = {
         const eventCollection = await eventsData();
         const userEvents = await eventCollection.find({ createdBy: userInfo._id }).toArray();
         return await userEvents;
-    }
+    },
+
+    async getSportCentricEvent(emailId, sportFilter) {
+
+
+        let eventCollection = await eventsData();
+        let res = await eventCollection.find({}).toArray();
+        let result = [];
+        
+        let j = 0;
+        for (let i = 0; i < res.length; i++) {
+            event = res[i];
+            let playerName = event.playersList;
+            var Found = false;
+            if (playerName !== undefined) {
+                playerName.forEach(element => {
+                    if (element.email === emailId) {
+                        Found = true;
+                    }
+
+                });
+            }
+           
+            if (event.status == "approved" && event.noOfPlayers > 0 && Found == false && event.creatorEmail !== emailId && event.sports === sportFilter) {
+                let eventInfo = {
+                    "_id": "",
+                    "sport": "",
+                    "creator": "",
+                    "date": "",
+                    "time": "",
+                    "location": "",
+                    "groundName": "",
+                    "address": ""
+                }
+                eventInfo._id = event._id;
+                eventInfo.sport = event.sports;
+                eventInfo.creator = event.creatorEmail;
+                eventInfo.date = event.date;
+                let mapsCollection = await mapsData()
+                let mapInfo = await mapsCollection.findOne({ eventsId: event._id });
+               
+                if(mapInfo != null){
+                eventInfo.time = mapInfo.time;
+                eventInfo.location = event.location;
+                eventInfo.groundName = mapInfo.name;
+                eventInfo.address = mapInfo.address;
+                } 
+                result.push(eventInfo); 
+            }
+        }
+        
+
+        return result;
+    },
 
 }
